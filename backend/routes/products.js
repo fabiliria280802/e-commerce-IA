@@ -29,7 +29,10 @@ const storage = multer.diskStorage({
     },
 });
 
-const uploadOptions = multer({ storage: storage });
+const uploadOptions = multer({
+    storage: storage,
+    limits: { fileSize: 8 * 1024 * 1024 }
+});
 
 router.get(`/`, [
     check('categories').optional().isString().withMessage('Categories should be a string'),
