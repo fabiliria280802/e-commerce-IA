@@ -21,13 +21,9 @@ const ProductRecommendations = ({ userId }) => {
   }, [userId]);
 
   const fallbackProducts = [
-    { id: 1, name: 'FIFA 2024 PS5', price: '$25', description: "The best FIFA of all times", image: "https://i.ebayimg.com/images/g/IVkAAOSwbWZlXLat/s-l1200.webp" },
-    { id: 2, name: 'Macbook PRO 2019', price: '$2000', description: "Greatest pc in the world", image: "https://i.insider.com/5d29153bb44ce766967db30f?width=1200&format=jpeg" },
-    { id: 3, name: 'Surface PRO 7', price: '$300', description: "", image: "https://m.media-amazon.com/images/I/61qS1eDVy9S._AC_SL1500_.jpg" },
-    { id: 4, name: 'Fallback Product 3', price: '$30', description: "", image: "https://i.insider.com/5d29153bb44ce766967db30f?width=1200&format=jpeg" },
-    { id: 5, name: 'Fallback Product 3', price: '$30', description: "", image: "https://i.insider.com/5d29153bb44ce766967db30f?width=1200&format=jpeg" },
-    { id: 6, name: 'Fallback Product 3', price: '$30', description: "", image: "https://i.insider.com/5d29153bb44ce766967db30f?width=1200&format=jpeg" },
-    { id: 7, name: 'Fallback Product 3', price: '$30', description: "", image: "https://i.insider.com/5d29153bb44ce766967db30f?width=1200&format=jpeg" },
+    { id: 1, name: 'FIFA 2023 PS5', price: '$20', description: "The hardest FIFA of all times", image: "https://5.imimg.com/data5/SELLER/Default/2022/8/ZW/MH/QS/140642735/fifa-2023-ps5-ps4-.jpeg" },
+    { id: 2, name: 'Magic Mouse 2', price: '$200', description: "Greatest mouse in the world", image: "https://think-ecuador.com/wp-content/uploads/2020/10/Magic-Mouse-2-Color-Plata.jpg" },
+    { id: 3, name: 'Apple iPhone 15 Pro Max', price: '$1400', description: "RAM: 8 GB \nBro \nConection USB-C & WiFi 6 \N256 GB", image: "https://i.blogs.es/f93223/iphone-13-pro-00-01/650_1200.jpg" },
   ];
 
   return (

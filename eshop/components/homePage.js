@@ -3,14 +3,21 @@ import { View, Text, FlatList, StyleSheet, Image, Button, TouchableOpacity } fro
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Menu } from 'react-native-paper';
 import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
 
-const HomePage = () => {
+const HomePage = ({ route }) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    if (route.params?.cartItems) {
+      setCartItems(route.params.cartItems);
+    }
+  }, [route.params?.cartItems, isFocused]);
 
   const openMenu = () => setVisible(true);
   const closeMenu = () => setVisible(false);
@@ -40,20 +47,21 @@ const HomePage = () => {
   }, []);
 
   const handleInfo = (product) => {
-    // Manejar la lógica de mostrar información del producto
     alert(`Información del producto: \n${product.description}`);
   };
 
   const handleAddToCart = (product) => {
-    // Manejar la lógica de agregar el producto al carrito
-    setCartCount(cartCount + 1); // Incrementar el contador del carrito
+    setCartItems([...cartItems, product]);
     alert(`Producto agregado al carrito:  ${product.name}`);
   };
 
   const handleRecommendations = () => {
-    // Navegar a la pestaña de ProductRecommendations
     closeMenu();
     navigation.navigate('ProductRecommendations');
+  };
+
+  const handleCartPress = () => {
+    navigation.navigate('Shopping', { cartItems });
   };
 
   return (
@@ -61,21 +69,22 @@ const HomePage = () => {
       <View style={styles.header}>
         <Text style={styles.heading}>Product Catalog</Text>
         <View style={styles.userInfo}>
-          <Icon name="shopping-cart" style={styles.userIcons} />
-          <Text style={styles.cartCount}>{cartCount}</Text>
+          <TouchableOpacity onPress={handleCartPress} style={styles.cartContainer}>
+            <Text style={styles.cartCount}>{cartItems.length}</Text>
+            <Icon name="shopping-cart" style={styles.userIcons} />
+          </TouchableOpacity>
           <Menu
-              visible={visible}
-              onDismiss={closeMenu}
-              anchor={
-                <TouchableOpacity onPress={openMenu} style={styles.menuTrigger}>
-                  <Icon name="user" style={styles.userIcons} />
-                  <Text style={styles.userName}>Messi</Text>
-                </TouchableOpacity>
-              }
-            >
-              <Menu.Item onPress={handleRecommendations} title="Recomendaciones" />
-              {/* Agrega más opciones aquí si es necesario */}
-            </Menu>
+            visible={visible}
+            onDismiss={closeMenu}
+            anchor={
+              <TouchableOpacity onPress={openMenu} style={styles.menuTrigger}>
+                <Icon name="user" style={styles.userIcons} />
+                <Text style={styles.userName}>Messi</Text>
+              </TouchableOpacity>
+            }
+          >
+            <Menu.Item onPress={handleRecommendations} title="Recomendaciones" />
+          </Menu>
         </View>
       </View>
       <FlatList
@@ -119,9 +128,13 @@ const styles = StyleSheet.create({
     color: "#000",
     padding: 5,
   },
+  cartContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   cartCount: {
     marginLeft: 5,
-    marginRight: 15,
+    marginRight: 5,
     fontSize: 16,
     color: "#000",
   },
@@ -134,7 +147,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   card: {
