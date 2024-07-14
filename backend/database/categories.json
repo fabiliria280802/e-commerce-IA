@@ -1,37 +1,52 @@
-[{
-    "_id": {
-      "$oid": "5f15d467f3a046427a1c26e1"
-    },
+[
+  {
     "name": "Electronics",
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15d545f3a046427a1c26e2"
-    },
+    "color": "#ff5733",
+    "icon": "fa fa-tv",
+    "image": "https://example.com/electronics.png"
+  },
+  {
     "name": "Beauty",
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15d54cf3a046427a1c26e3"
-    },
+    "color": "#ff33a8",
+    "icon": "fa fa-heart",
+    "image": "https://example.com/beauty.png"
+  },
+  {
     "name": "Computers",
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15d5b2cb4a6642bddc0fe7"
-    },
+    "color": "#33ff57",
+    "icon": "fa fa-laptop",
+    "image": "https://example.com/computers.png"
+  },
+  {
     "name": "Home",
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15d5b7cb4a6642bddc0fe8"
-    },
+    "color": "#3357ff",
+    "icon": "fa fa-home",
+    "image": "https://example.com/home.png"
+  },
+  {
     "name": "Garden",
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15d5cdcb4a6642bddc0fe9"
-    },
+    "color": "#57ff33",
+    "icon": "fa fa-leaf",
+    "image": "https://example.com/garden.png"
+  },
+  {
     "name": "Games",
-    "__v": 0
-  }]
+    "color": "#a833ff",
+    "icon": "fa fa-gamepad",
+    "image": "https://example.com/games.png"
+  },
+  {
+    "name": "Fashion",
+    "color": "#ff5733",
+    "icon": "fa fa-shopping-bag",
+    "image": "https://example.com/fashion.png"
+  },
+  {
+    "name": "Sports",
+    "color": "#33a8ff",
+    "icon": "fa fa-futbol-o",
+    "image": "https://example.com/sports.png"
+  }
+]
+
+

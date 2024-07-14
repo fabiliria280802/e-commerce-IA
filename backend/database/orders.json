@@ -1,73 +1,46 @@
-[{
-    "_id": {
-      "$oid": "5f15dd84d47dbd4530b2fb60"
-    },
-    "status": "Pending",
+[
+  {
     "orderItems": [
       {
-        "_id": {
-          "$oid": "5f15dd84d47dbd4530b2fb61"
-        },
-        "product": {
-          "$oid": "5f15d8852a025143f9593a7c"
-        },
-        "quantity": 2
+        "quantity": 2,
+        "product": "60d21b4967d0d8992e610c85"
       },
       {
-        "_id": {
-          "$oid": "5f15dd84d47dbd4530b2fb62"
-        },
-        "product": {
-          "$oid": "5f15d92ee520d44421ed8e9b"
-        },
-        "quantity": 4
+        "quantity": 1,
+        "product": "60d21b4967d0d8992e610c86"
       }
     ],
-    "shippingAddress1": "sazovicka",
-    "shippingAddress2": "zlicin",
-    "city": "Praha",
-    "zip": "15521",
-    "country": "Czech Republic",
-    "phone": 702241333,
-    "totalPrice": 350,
-    "user": {
-      "$oid": "5f15d5b2cb4a6642bddc0fe7"
-    },
-    "__v": 0
-  },{
-    "_id": {
-      "$oid": "5f15de0cd47dbd4530b2fb63"
-    },
+    "shippingAddress1": "123 Main St",
+    "shippingAddress2": "Apt 4B",
+    "city": "New York",
+    "zip": "10001",
+    "country": "USA",
+    "phone": "123-456-7890",
     "status": "Pending",
+    "totalPrice": 150,
+    "user": "60d21b4967d0d8992e610c87",
+    "dateOrdered": "2023-07-14T00:00:00.000Z"
+  },
+  {
     "orderItems": [
       {
-        "_id": {
-          "$oid": "5f15de0cd47dbd4530b2fb64"
-        },
-        "product": {
-          "$oid": "5f15d8852a025143f9593a7c"
-        },
-        "quantity": 6
+        "quantity": 3,
+        "product": "60d21b4967d0d8992e610c88"
       },
       {
-        "_id": {
-          "$oid": "5f15de0cd47dbd4530b2fb65"
-        },
-        "product": {
-          "$oid": "5f15d92ee520d44421ed8e9b"
-        },
-        "quantity": 4
+        "quantity": 1,
+        "product": "60d21b4967d0d8992e610c89"
       }
     ],
-    "shippingAddress1": "Andel",
-    "shippingAddress2": "Praha 5",
-    "city": "Praha",
-    "zip": "15521",
-    "country": "Czech Republic",
-    "phone": 702241333,
-    "totalPrice": 950,
-    "user": {
-      "$oid": "5f15d5b2cb4a6642bddc0fe7"
-    },
-    "__v": 0
-  }]
+    "shippingAddress1": "456 Elm St",
+    "shippingAddress2": "",
+    "city": "San Francisco",
+    "zip": "94103",
+    "country": "USA",
+    "phone": "987-654-3210",
+    "status": "Shipped",
+    "totalPrice": 200,
+    "user": "60d21b4967d0d8992e610c90",
+    "dateOrdered": "2023-07-13T00:00:00.000Z"
+  }
+]
