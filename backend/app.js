@@ -46,7 +46,7 @@ const Product = require('./models/product');
 const Order = require('./models/order');
 const User = require('./models/user');
 const OrderItem = require('./models/order-item');
-const Categorie = require('./models/categorie');
+const Categorie = require('./models/category');
 
 //Routes
 const productsRouter = require('./routes/products');
@@ -60,7 +60,11 @@ app.use(`${api}/orders`, ordersRouter);
 app.use(`${api}/users`, usersRouter);
 app.use(`${api}/categories`, categoriesRouter);
 
-mongoose.connect(mongoDB)
+mongoose.connect(mongoDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: 'eshop-database'
+    })
     .then(() => {
         console.log('Database connection is ready');
     })
